@@ -17,7 +17,7 @@ loginRouter.post('/login', async (req: Request, res: Response) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(500).json({ ok: false, data: "Couldn't create a user :(" });
+    res.status(500).json({ ok: false, data: "Couldn't sign in an user :(" });
   }
 });
 
@@ -27,7 +27,18 @@ loginRouter.post('/signup', async (req: Request, res: Response) => {
     res.status(200).json({ ok: true, data: newUser });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ ok: false, data: "Couldn't create a user :(" });
+    res.status(500).json({ ok: false, data: "Couldn't create an user :(" });
+  }
+});
+loginRouter.get('/login/:token', async (req: Request, res: Response) => {
+  try {
+    const isUserSigned = await userController.isSigned(req.params.token);
+    if (isUserSigned) res.status(200).send({ ok: true, data: isUserSigned });
+    else
+      res.status(400).json({ ok: false, data: 'Your session has expired. Please sign in again.' });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ ok: false, data: "Couldn't check if the user is logged in :(" });
   }
 });
 export { loginRouter };

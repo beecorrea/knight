@@ -1,7 +1,7 @@
 {
-  "name": "anthill-express",
+  "name": "knight",
   "version": "1.0.0",
-  "description": "Express + TS Version of anthill",
+  "description": "API for User login with JWT",
   "main": "main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,17 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jvmonteiro/anthill-express.git"
+    "url": "git+https://github.com/jvmonteiro/knight.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jvmonteiro/anthill-express/issues"
+    "url": "https://github.com/jvmonteiro/knight/issues"
   },
-  "homepage": "https://github.com/jvmonteiro/anthill-express#readme",
+  "homepage": "https://github.com/jvmonteiro/knight#readme",
   "dependencies": {
-    "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",

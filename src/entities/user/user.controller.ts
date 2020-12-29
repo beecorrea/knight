@@ -12,4 +12,7 @@ export class UserController<T extends UserType> {
   async signin(user: T) {
     return await this._usrSvc.signin(user);
   }
+  async isSigned(token: string) {
+    return await this._usrSvc.isSigned(token);
+  }
 }
